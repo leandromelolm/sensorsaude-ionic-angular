@@ -1,0 +1,40 @@
+{
+    "estabelecimentos":[
+        {
+            "id": 1,
+            "name": "Estabelecimento a",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 2,
+            "name": "Estabelecimento b",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 3,
+            "name": "Estabelecimento c",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 4,
+            "name": "Estabelecimento d",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 5,
+            "name": "Estabelecimento e",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 6,
+            "name": "Estabelecimento f",
+            "count": 2,
+            "score": 4.5
+        }
+    ]
+}
