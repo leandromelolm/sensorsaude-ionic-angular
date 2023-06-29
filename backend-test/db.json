@@ -9,14 +9,14 @@
         {
             "id": 2,
             "name": "Estabelecimento b",
-            "count": 2,
-            "score": 4.5
+            "count": 3,
+            "score": 3.0
         },
         {
             "id": 3,
             "name": "Estabelecimento c",
-            "count": 2,
-            "score": 4.5
+            "count": 4,
+            "score": 2.5
         },
         {
             "id": 4,
@@ -33,6 +33,60 @@
         {
             "id": 6,
             "name": "Estabelecimento f",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 7,
+            "name": "Estabelecimento g",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 8,
+            "name": "Estabelecimento h",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 9,
+            "name": "Estabelecimento i",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 10,
+            "name": "Estabelecimento j",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 11,
+            "name": "Estabelecimento l",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 12,
+            "name": "Estabelecimento m",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 13,
+            "name": "Estabelecimento n",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 14,
+            "name": "Estabelecimento o",
+            "count": 2,
+            "score": 4.5
+        },
+        {
+            "id": 15,
+            "name": "Estabelecimento p",
             "count": 2,
             "score": 4.5
         }
