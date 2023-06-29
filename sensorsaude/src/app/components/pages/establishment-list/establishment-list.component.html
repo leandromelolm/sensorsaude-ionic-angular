@@ -7,15 +7,51 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Lista de Estabelecimento</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list>
+    
+    <ion-list-header>
+      Lista de estabelecimentos
+    </ion-list-header>
+    
+    <ion-list *ngIf="!this.establishments">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <div *ngIf="this.erro_server">
+        <p>Servidor não respondendo! Recarregue a página em alguns instantes</p>
+      </div>
+    </ion-list>
 
-  <div id="container">
-    <strong class="capitalize">{{ title }}</strong>
-    <p>Lista de Estabelecimentos</p>
-  </div>
+    <div *ngIf="this.establishments && this.establishments.length > 0">
+      <ion-item *ngFor="let e of this.establishments">
+        <ion-avatar slot="start">
+          <img src="assets/icon/favicon.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{this.e.name}}</h2>
+          <h3>Média {{this.e.score}} de {{this.e.count}} voto(s)</h3>
+
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <div *ngIf="this.establishments && this.establishments.length == 0">
+      <p>Nenhum estabelecimento cadastrado!</p>
+    </div>
+
+  </ion-list>
 </ion-content>

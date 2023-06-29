@@ -7,6 +7,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { EstablishmentListComponent } from './components/pages/establishment-list/establishment-list.component';
+import { EstabelecimentoService } from './services/establishment.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,10 +16,14 @@ import { EstablishmentListComponent } from './components/pages/establishment-lis
     EstablishmentListComponent
   ],
   imports: [
-    BrowserModule, IonicModule.forRoot(), AppRoutingModule
+    BrowserModule, 
+    HttpClientModule,
+    IonicModule.forRoot(), 
+    AppRoutingModule
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    EstabelecimentoService
   ],
   bootstrap: [
     AppComponent
