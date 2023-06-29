@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 import { EstabelecimentoService } from 'src/app/services/establishment.service';
 import { Establishment } from 'src/app/services/model';
 
@@ -15,7 +16,9 @@ export class EstablishmentListComponent  implements OnInit {
 
   erro_server : boolean;
 
-  constructor(private establishmentService : EstabelecimentoService) { 
+  constructor(
+    private establishmentService : EstabelecimentoService,
+    public loadingCtrl : LoadingController) { 
     this.erro_server = false;
   }
 
@@ -24,22 +27,35 @@ export class EstablishmentListComponent  implements OnInit {
   }
 
   list() : void {    
+    let loader = this.presentLoading();
     this.establishmentService.findAll().subscribe({
       next: (establishments: Establishment[]) => 
         this.establishments = establishments,
       error: (e) =>
-       this.errorServer(),
+       this.dismissLoading(loader),
       complete: () => {
-        console.log("OK")
-        console.log(this.establishments)
+        this.dismissLoading(loader)
       }
     });
+  }   
+
+  async presentLoading() {
+    const loading = this.loadingCtrl.create({
+      message: 'Please wait...',      
+    })
+    await (await loading).present();
+    return loading;
   }
 
-  errorServer(){
-    console.log("erro")    
+  dismissLoading(loading: Promise<any>) {
+    loading.then(load => {
+      load.dismiss();
+      this.errorServer();
+    })
+  }
+
+  errorServer(){      
     this.erro_server = true;
   }
-
 
 }

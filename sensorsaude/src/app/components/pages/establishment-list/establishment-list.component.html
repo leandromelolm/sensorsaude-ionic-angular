@@ -7,36 +7,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-list>
-    
-    <ion-list-header>
-      Lista de estabelecimentos
-    </ion-list-header>
-    
-    <ion-list *ngIf="!this.establishments">
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <ion-skeleton-text></ion-skeleton-text>
-        </ion-thumbnail>
-        <ion-label>
-          <h3>
-            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
-          </h3>
-          <p>
-            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-          </p>
-          <p>
-            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
-          </p>
-        </ion-label>
-      </ion-item>
-      <div *ngIf="this.erro_server">
-        <p>Servidor não respondendo! Recarregue a página em alguns instantes</p>
-      </div>
-    </ion-list>
+<ion-content [fullscreen]="true" class="ion-padding">  
+  <ion-list>  
 
+    <div id="div__error_server" *ngIf="!this.establishments && this.erro_server">     
+        <p>Servidor não respondendo! Recarregue a página em alguns instantes</p>        
+    </div>
+    
     <div *ngIf="this.establishments && this.establishments.length > 0">
+      <ion-list-header>
+        Lista de estabelecimentos
+      </ion-list-header>      
       <ion-item *ngFor="let e of this.establishments">
         <ion-avatar slot="start">
           <img src="assets/icon/favicon.png">
